@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 
-const Country = ({ country, index }) => {
+const Country = ({ country, index, countVisit }) => {
   const [visited, setVisited] = useState(false);
-
   const handleVisit = () => {
     visited ? setVisited(false) : setVisited(true);
+    visited ? 0 : countVisit(country);
   };
 
   return (
     <div
-      className={`font-semibold border-2 rounded-2xl m-4 p-4 h-110 ${
+      className={`font-semibold border-2 rounded-2xl m-4 p-4 h-fit ${
         visited ? "text-cyan-400" : "text-white"
       }`}
     >
-      <img className="rounded-2xl mb-6" src={country.flags.flags.png} alt="" />
+      <img className="rounded-2xl my-6" src={country.flags.flags.png} alt="" />
       <p>Serial No: {index + 1}</p>
       <h2>Name: {country.name.common}</h2>
       <h3>Region: {country.region.region}</h3>
