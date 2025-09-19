@@ -9,7 +9,7 @@ const Country = ({ country, index, countVisit }) => {
 
   return (
     <div
-      className={`font-semibold border-2 rounded-2xl m-4 p-4 h-fit ${
+      className={`font-semibold border-2 rounded-2xl  p-4 h-full ${
         visited ? "text-cyan-400" : "text-white"
       }`}
     >

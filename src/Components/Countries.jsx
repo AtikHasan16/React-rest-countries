@@ -9,20 +9,23 @@ const Countries = ({ CountriesPromiseData }) => {
   const countVisit = (country) => {
     const countCountries = [...visitCount, country];
     setVisitCount(countCountries);
-    console.log(countCountries);
-
-    console.log(country);
+    // console.log(countCountries);
   };
   return (
     <>
       <h1 className="text-center">Countries</h1>
-      <div className="grid grid-cols-3">
-        <ol className="border-2 border-amber-600 rounded-2xl w-fit p-10 list-decimal">
-          <h2 className="text-center text-xl font-bold underline underline-offset-8 mb-4">
+      <div className="grid grid-cols-3 gap-10">
+        <ol
+          key={visitCount}
+          className="font-semibold border-2 rounded-2xl m-4 p-4 pl-8 h-fit list-decimal"
+        >
+          <h2 className="text-center text-xl font-bold ">
             Visited Country : {visitCount.length}
           </h2>
           {visitCount.map((country) => (
-            <li>{country.name.common}</li>
+            <li key={country.ccn3.ccn3} className="">
+              {country.name.common}
+            </li>
           ))}
         </ol>
         {countries.map((country, index) => (
